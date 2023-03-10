@@ -1,0 +1,568 @@
+{
+    "Land Before Time": [
+    {
+      "Quantity": 1,
+      "Name": "Atla Palani, Nest Tender",
+      "Rarity": "mythic"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Silverclad Ferocidons",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Thrasta, Tempest's Roar",
+      "Rarity": "mythic"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Gigantosaurus",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Pounce",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Fires of Yavimaya",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Raging Regisaur",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Savage Stomp",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Fervor",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Regrowth",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Raging Swordtooth",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Primal Rage",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Ancient Brontodon",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Shake the Foundations",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Akroma's Will",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Idyllic Tutor",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Monster Manual // Zoological Study",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Gaea's Blessing",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Generous Gift",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Overrun",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Seedborn Muse",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Aether Flash",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Full Flowering",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Familiar Ground",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Wakening Sun's Avatar",
+      "Rarity": "mythic"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Campfire",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Magewright's Stone",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Titanic Ultimatum",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Explore",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Naya Charm",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Carnage Tyrant",
+      "Rarity": "mythic"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Obscuring Haze",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Determined Iteration",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Flawless Maneuver",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Farseek",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Forerunner of the Empire",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Temple Altisaur",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Patriar's Seal",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Jetmir's Garden",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Triumph of the Hordes",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Lightning Greaves",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Titanoth Rex",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Fanatical Devotion",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Canopy Vista",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Alpine Meadow",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Arctic Treeline",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Martyr's Cause",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Regisaur Alpha",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Chromatic Lantern",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Rootborn Defenses",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Etali, Primal Storm",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Garruk's Uprising",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Privileged Position",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Naya Panorama",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Zetalpa, Primal Dawn",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Unnatural Growth",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Thundering Spineback",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Zacama, Primal Calamity",
+      "Rarity": "mythic"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Thornbite Staff",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Swiftfoot Boots",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Sunpetal Grove",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Sol Ring",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Skyshroud Claim",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Selesnya Sanctuary",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Rootbound Crag",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Rhythm of the Wild",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Return to Nature",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Rampant Growth",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Rampaging Brontodon",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Quartzwood Crasher",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Primal Growth",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Polyraptor",
+      "Rarity": "mythic"
+    },
+    {
+      "Quantity": 5,
+      "Name": "Plains",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Phyrexian Altar",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Overwhelming Stampede",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Open the Armory",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Noxious Revival",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 5,
+      "Name": "Mountain",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Mosswort Bridge",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Marauding Raptor",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Krosan Verge",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Kodama's Reach",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Jungle Shrine",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Illusionist's Bracers",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "High Market",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Gruul Turf",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Growing Ranks",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Goring Ceratops",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Goblin Bombardment",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Gishath, Sun's Avatar",
+      "Rarity": "mythic"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Ghalta, Primal Hunger",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Aura Shards",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 9,
+      "Name": "Forest",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Farewell",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Evolving Wilds",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Druid's Deliverance",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Deflecting Swat",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Decimate",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Cultivate",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Commune with Dinosaurs",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Command Tower",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Cinder Glade",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Boros Garrison",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Blessed Respite",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Blasting Station",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Bellowing Aegisaur",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Beast Within",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Ashnod's Altar",
+      "Rarity": "uncommon"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Arcane Signet",
+      "Rarity": "common"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Castle Garenbrig",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Apex Altisaur",
+      "Rarity": "rare"
+    },
+    {
+      "Quantity": 1,
+      "Name": "The Tarrasque",
+      "Rarity": "mythic"
+    },
+    {
+      "Quantity": 1,
+      "Name": "Pyrohemia",
+      "Rarity": "uncommon"
+    }
+  ]}
