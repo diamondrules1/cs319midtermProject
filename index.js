@@ -10,23 +10,38 @@ function readJSON(file){
             console.log('error:' + err);
         })
 }
+
 function appendData(data){
-    let deckElement = document.getElementById("deck");
-    for (let deck in data){
-        for (let card of deck){
-            let div = document.createElement("li");
-            if (card["Rarity"] == "mythic"){
-                div.innerHTML = `${card["Quantity"]} ${card["Name"]} ★★★`;
-            } else if (card["Rarity"] == "rare"){
-                div.innerHTML = `${card["Quantity"]} ${card["Name"]} ★★`;
-            } else if (card["Rarity"] == "uncommon"){
-                div.innerHTML = `${card["Quantity"]} ${card["Name"]} ★`;
-            } else {
-                div.innerHTML = `${card["Quantity"]} ${card["Name"]}`;
-            }
-            deckElement.appendChild(div);
+    var deckElement = document.getElementById("deck");
+    var i = Math.floor(Math.random() * 93)
+    for (var r = 0; r < 7; ++r){
+        var div = document.createElement("li");
+        var rarity = data.landBeforeTime[i + r].Rarity;
+        var num = data.landBeforeTime[i + r].Quantity;
+        var name = data.landBeforeTime[i + r].Name;
+        if (rarity == "mythic"){
+            div.innerHTML = `${num} ${name} ★★★`;
+        } else if (rarity  == "rare"){
+            div.innerHTML = `${num} ${name} ★★`;
+        } else if (rarity  == "uncommon"){
+            div.innerHTML = `${num} ${name} ★`;
+        } else {
+            div.innerHTML = `${num} ${name}`;   
         }
-        
+        deckElement.appendChild(div);
     }
 }
-readJSON('http://127.0.0.1:5500/secoms319/data.json');
+window.onload=function(){
+    var newHand7;
+    newHand7 = document.getElementById("new7");
+
+newHand7.addEventListener("click", function() {
+    var child = document.getElementById("deck").lastElementChild;
+    while(child){
+        document.getElementById("deck").removeChild(child);
+        child = document.getElementById("deck").lastElementChild;
+    }
+
+    readJSON('dinoDeck.json');
+});
+}
