@@ -19,6 +19,9 @@ function appendData(data){
         var rarity = data.landBeforeTime[i + r].Rarity;
         var num = data.landBeforeTime[i + r].Quantity;
         var name = data.landBeforeTime[i + r].Name;
+        if (name == "Forest" || name == "Plains" || name == "Mountain"){
+            num = 1;
+        }
         if (rarity == "mythic"){
             div.innerHTML = `${num} ${name} ★★★`;
         } else if (rarity  == "rare"){
@@ -42,6 +45,6 @@ newHand7.addEventListener("click", function() {
         child = document.getElementById("deck").lastElementChild;
     }
 
-    readJSON('dinoDeck.json');
+    readJSON('data.json');
 });
 }
