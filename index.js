@@ -2,10 +2,9 @@ fetch("selected_products.json")
   .then((response) => response.json())
   .then((data) => dataToHTML(data));
 
-function dataToHTML(data) {
-  appendDesc(data);
-  addImg(data);
-  appendName(data);
+function dataToHTML(data){
+    appendDesc(data);
+    addImg(data);
 }
 
 function readJSON(file) {
@@ -63,7 +62,7 @@ function onLoad() {
   cartView = document.getElementById("cart");
   summary = document.getElementById("confirmation");
 }
-function loadBrowsePage() {
+function loadBrowsePage() { 
   browse.removeAttribute("hidden");
   cartView.setAttribute("hidden", "hidden");
   summary.setAttribute("hidden", "hidden");
@@ -73,11 +72,21 @@ function loadCheckoutPage() {
   browse.setAttribute("hidden", "hidden");
   summary.setAttribute("hidden", "hidden");
 }
-function loadConfirmationPage() {
-  summary.innerHTML = Shop.listItemsNoButtons();
-  summary.removeAttribute("hidden");
-  cartView.setAttribute("hidden", "hidden");
-  browse.setAttribute("hidden", "hidden");
+function loadConfirmationPage(){
+    summary.innerHTML = Shop.listItemsNoButtons();
+    summary.removeAttribute("hidden");
+    cartView.setAttribute("hidden","hidden");
+    browse.setAttribute("hidden","hidden");
+}
+function refreshPage(){
+    nump = [0,0,0,0,0,0];
+    document.getElementById("p1num").innerText = nump[0];
+    document.getElementById("p2num").innerText = nump[0];
+    document.getElementById("p3num").innerText = nump[0];
+    document.getElementById("p4num").innerText = nump[0];
+    document.getElementById("p5num").innerText = nump[0];
+    document.getElementById("p6num").innerText = nump[0];
+    loadBrowsePage();
 }
 
 var nump = [];
