@@ -75,8 +75,9 @@ function loadCheckoutPage() {
   browse.setAttribute("hidden", "hidden");
   summary.setAttribute("hidden", "hidden");
 }
-function loadConfirmationPage(){
+function loadConfirmationPage(order){
     let itemTypes = 0;
+    let client = "<p>"+ order.name + "<br>" + order.email + "<br>" + order.card +"</p>";
     let list = "";
     for (let i = 0; i < 6; i++){
         if (nump[i] > 0){
@@ -84,6 +85,7 @@ function loadConfirmationPage(){
             list += "<li>"+productList.products[i].title + "....................$" + (productList.products[i].price * nump[i])+"</li>";
         }
     }
+    document.getElementById("clientInfo").innerHTML = client;
     document.getElementById("summaryList").innerHTML = list;
     summary.removeAttribute("hidden");
     cartView.setAttribute("hidden","hidden");
@@ -199,30 +201,37 @@ function decrement(a) {
 }
  function validate(){
     val = true;
+    let order = {
+        name:"",
+        email:"",
+        card:""
+    }
     let email = document.getElementById('inputEmail4')
     let name = document.getElementById('inputName')
     let card = document.getElementById('inputCard')
-    let form = document.getElementById('checkout-form')
     if (!email.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
         email.setAttribute("class", "form-control is-invalid");
         val = false;
     } else {
         email.setAttribute("class", "form-control is-valid");
+        order.email = email.value;
     }
     if (name.value.length == 0){
         name.setAttribute("class","form-control is-invalid")
         val = false
     }else{
         name.setAttribute("class", "form-control is-valid");
+        order.name = name.value;
     }
     if (!card.value.match(/^[0-9]{4}\-[0-9]{4}\-[0-9]{4}\-[0-9]{4}$/)){
         card.setAttribute("class","form-control is-invalid")
         val = false
     }else{
         card.setAttribute("class", "form-control is-valid");
+        order.card = card.value;
     }
     if (val){
-        loadConfirmationPage();
+        loadConfirmationPage(order);
     }
  }
 
