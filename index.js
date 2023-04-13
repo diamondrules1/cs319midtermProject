@@ -37,6 +37,25 @@ function addImg(data){
     document.getElementById("p5img").src = data.products[4].image;
     document.getElementById("p6img").src = data.products[5].image;
 }
+let browse = document.getElementById("browse");
+let cartView = document.getElementById("cart");
+let summary = document.getElementById("confirmation");
+function loadBrowsePage(){
+    browse.removeAttribute("hidden");
+    cartView.setAttribute("hidden","hidden");
+    summary.setAttribute("hidden","hidden");
+}
+function loadCheckoutPage(){
+    cartView.removeAttribute("hidden");
+    browse.setAttribute("hidden","hidden");
+    summary.setAttribute("hidden","hidden");
+}
+function loadConfirmationPage(){
+    summary.innerHTML = Shop.listItemsNoButtons();
+    summary.removeAttribute("hidden");
+    cartView.setAttribute("hidden","hidden");
+    browse.setAttribute("hidden","hidden");
+}
 
 var nump = [];
 nump = [0, 0, 0, 0, 0, 0];
