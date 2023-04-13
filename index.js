@@ -168,7 +168,7 @@ function decrement(a) {
       document.getElementById("p3num").innerText = nump[2];
       document.getElementById("Cp3num").innerText = nump[2];
       if (nump[2] == 0) {
-        document.getElementById("p3cart").setAttribute("hidden", "hidden");
+        document.getElementBy("p3cart").setAttribute("hidden", "hidden");
       }
       break;
     case "p4num":
