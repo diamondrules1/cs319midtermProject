@@ -86,12 +86,15 @@ function loadConfirmationPage(order){
     let itemTypes = 0;
     let client = "<p>"+ order.name + "<br>" + order.email + "<br>" + order.card +"</p>";
     let list = "";
+    let orderTotal = 0;
     for (let i = 0; i < 6; i++){
         if (nump[i] > 0){
             itemTypes++;
             list += "<li>"+productList.products[i].title + "....................$" + (productList.products[i].price * nump[i])+"</li>";
+            orderTotal += productList.products[i].price*nump[i];
         }
     }
+    document.getElementById("orderTotal").innerHTML = "<p>Order Total........................$" + orderTotal + "</p>";
     document.getElementById("clientInfo").innerHTML = client;
     document.getElementById("summaryList").innerHTML = list;
     summary.removeAttribute("hidden");
