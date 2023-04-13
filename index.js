@@ -1,83 +1,70 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Shop from "./shop/Shop";
+// const browse = document.getElementById("browse");
+// const cartView = document.getElementById("cart");
+// const summary = document.getElementById("confirmation");
+// const checkout = document.getElementById("checkout");
+// const order = document.getElementById("order");
+// const close = document.getElementById("close");
+// const returnCheck = document.getElementById("return");
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <Shop />
-  </React.StrictMode>
-);
+// function loadBrowsePage(){
+//     browse.removeAttribute("hidden");
+//     cartView.hidden;
+//     summary.hidden;
+// }
+// function loadCheckoutPage(){
+//     cartView.removeAttribute("hidden");
+//     browse.hidden;
+//     summary.hidden;
+// }
+// function loadConfirmationPage(){
+//     summary.removeAttribute("hidden");
+//     cartView.hidden;
+//     browse.hidden;
 
-fetch('https://fakestoreapi.com/products/1')
-            .then(res=>res.json())
-            .then(json=>console.log(json));
-const browse = getElementById("browse");
-const cartView = getElementById("cart");
-const summary = getElementById("confirmation");
-const checkout = getElementById("checkout");
-const order = getElementById("order");
-const close = getElementById("close");
-const returnCheck = getElementById("return");
-function loadBrowsePage(){
-    browse.removeAttribute("hidden");
-    cartView.hidden;
-    summary.hidden;
-}
-function loadCheckoutPage(){
-    cartView.removeAttribute("hidden");
-    browse.hidden;
-    summary.hidden;
-}
-function loadConfirmationPage(){
-    summary.removeAttribute("hidden");
-    cartView.hidden;
-    browse.hidden;
+// }
+// checkout.addEventListener("submit", event => {
+//     loadCheckoutPage();
+// });
+// order.addEventListener("submit",event => {
+//     loadConfirmationPage();
+// });
+// close.addEventListener("submit", event => {
+//     loadBrowsePage();
+//     Shop.clearCart();
+// });
+// returnCheck.addEventListener("submit", event => {
+//     loadBrowsePage();
+// })
+// loadBrowsePage();
 
-}
-checkout.addEventListener("submit", event => {
-    loadCheckoutPage();
-});
-order.addEventListener("submit",event => {
-    loadConfirmationPage();
-});
-close.addEventListener("submit", event => {
-    loadBrowsePage();
-    Shop.clearCart();
-});
-returnCheck.addEventListener("submit", event => {
-    loadBrowsePage();
-})
-loadBrowsePage();
-
-let cart = {
-  p1num: 0,
-  p2num: 0,
-  p3num: 0,
-  p4num: 0,
-  p5num: 0,
-  p6num: 0,
-};
+var nump = [];
+nump = [0, 0, 0, 0, 0, 0];
 
 function increment(a) {
   switch (a) {
     case "p1num":
-      cart.p1num++;
+      nump[0]++;
+      document.getElementById("p1num").innerText = nump[0];
       break;
     case "p2num":
-      cart.p2num++;
+      nump[1]++;
+      document.getElementById("p2num").innerText = nump[1];
       break;
     case "p3num":
-      cart.p3num++;
+      nump[2]++;
+      document.getElementById("p3num").innerText = nump[2];
       break;
     case "p4num":
-      cart.p4num++;
+      nump[3]++;
+      document.getElementById("p4num").innerText = nump[3];
       break;
     case "p5num":
-      cart.p5num++;
+      nump[4]++;
+      document.getElementById("p5num").innerText = nump[4];
       break;
     case "p6num":
-      cart.p6num++;
+      nump[5]++;
+      document.getElementById("p6num").innerText = nump[5];
       break;
   }
 }
@@ -85,22 +72,28 @@ function increment(a) {
 function decrement(a) {
   switch (a) {
     case "p1num":
-      cart.p1num--;
+      if(nump[0] > 0) nump[0]--;
+      document.getElementById("p1num").innerText = nump[0];
       break;
     case "p2num":
-      cart.p2num--;
+      if (nump[1] > 0) nump[1]--;
+      document.getElementById("p2num").innerText = nump[1];
       break;
     case "p3num":
-      cart.p3num--;
+      if(nump[2] > 0) nump[2]--;
+      document.getElementById("p3num").innerText = nump[2];
       break;
     case "p4num":
-      cart.p4num--;
+      if(nump[3] > 0) nump[3]--;
+      document.getElementById("p4num").innerText = nump[3];
       break;
     case "p5num":
-      cart.p5num--;
+        if(nump[4] > 0) nump[4]--;
+      document.getElementById("p5num").innerText = nump[4];
       break;
     case "p6num":
-      cart.p6num--;
+      if(nump[5] > 0) nump[5]--;
+      document.getElementById("p6num").innerText = nump[5];
       break;
   }
 }
