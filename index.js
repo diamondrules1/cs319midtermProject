@@ -2,9 +2,11 @@ fetch("selected_products.json")
   .then((response) => response.json())
   .then((data) => dataToHTML(data));
 
+let productList;
 function dataToHTML(data){
     appendDesc(data);
     addImg(data);
+    productList = data;
 }
 
 function readJSON(file) {
@@ -73,7 +75,15 @@ function loadCheckoutPage() {
   summary.setAttribute("hidden", "hidden");
 }
 function loadConfirmationPage(){
-    summary.innerHTML = Shop.listItemsNoButtons();
+    let itemTypes = 0;
+    let list = "";
+    for (let i = 0; i < 6; i++){
+        if (nump[i] > 0){
+            itemTypes++;
+            list += "<li>"+productList.products[i].title + "....................$" + (productList.products[i].price * nump[i])+"</li>";
+        }
+    }
+    document.getElementById("summaryList").innerHTML = list;
     summary.removeAttribute("hidden");
     cartView.setAttribute("hidden","hidden");
     browse.setAttribute("hidden","hidden");
