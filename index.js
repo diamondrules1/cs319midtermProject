@@ -20,41 +20,34 @@ function loadConfirmationPage(){
     cartView.hidden = true;
     browse.hidden = true;
 
-}
-function refreshPage(){
-    loadBrowsePage();
-    Shop.clearCart();
-}
-
-
-let cart = {
-  p1num: 0,
-  p2num: 0,
-  p3num: 0,
-  p4num: 0,
-  p5num: 0,
-  p6num: 0,
-};
+var nump = [];
+nump = [0, 0, 0, 0, 0, 0];
 
 function increment(a) {
   switch (a) {
     case "p1num":
-      cart.p1num++;
+      nump[0]++;
+      document.getElementById("p1num").innerText = nump[0];
       break;
     case "p2num":
-      cart.p2num++;
+      nump[1]++;
+      document.getElementById("p2num").innerText = nump[1];
       break;
     case "p3num":
-      cart.p3num++;
+      nump[2]++;
+      document.getElementById("p3num").innerText = nump[2];
       break;
     case "p4num":
-      cart.p4num++;
+      nump[3]++;
+      document.getElementById("p4num").innerText = nump[3];
       break;
     case "p5num":
-      cart.p5num++;
+      nump[4]++;
+      document.getElementById("p5num").innerText = nump[4];
       break;
     case "p6num":
-      cart.p6num++;
+      nump[5]++;
+      document.getElementById("p6num").innerText = nump[5];
       break;
   }
 }
@@ -62,22 +55,28 @@ function increment(a) {
 function decrement(a) {
   switch (a) {
     case "p1num":
-      cart.p1num--;
+      if(nump[0] > 0) nump[0]--;
+      document.getElementById("p1num").innerText = nump[0];
       break;
     case "p2num":
-      cart.p2num--;
+      if (nump[1] > 0) nump[1]--;
+      document.getElementById("p2num").innerText = nump[1];
       break;
     case "p3num":
-      cart.p3num--;
+      if(nump[2] > 0) nump[2]--;
+      document.getElementById("p3num").innerText = nump[2];
       break;
     case "p4num":
-      cart.p4num--;
+      if(nump[3] > 0) nump[3]--;
+      document.getElementById("p4num").innerText = nump[3];
       break;
     case "p5num":
-      cart.p5num--;
+        if(nump[4] > 0) nump[4]--;
+      document.getElementById("p5num").innerText = nump[4];
       break;
     case "p6num":
-      cart.p6num--;
+      if(nump[5] > 0) nump[5]--;
+      document.getElementById("p6num").innerText = nump[5];
       break;
   }
 }
