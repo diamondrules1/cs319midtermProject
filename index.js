@@ -37,6 +37,19 @@
 // })
 // loadBrowsePage();
 
+function readJSON(file){
+    fetch(file)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error:' + err);
+        })
+}
+
 var nump = [];
 nump = [0, 0, 0, 0, 0, 0];
 
