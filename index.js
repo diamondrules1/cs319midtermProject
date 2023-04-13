@@ -46,6 +46,13 @@ function appendName(data) {
   document.getElementById("Cp4name").innerText = data.products[3].title;
   document.getElementById("Cp5name").innerText = data.products[4].title;
   document.getElementById("Cp6name").innerText = data.products[5].title;
+  
+  document.getElementById("Sp1name").innerText = data.products[0].title;
+  document.getElementById("Sp2name").innerText = data.products[1].title;
+  document.getElementById("Sp3name").innerText = data.products[2].title;
+  document.getElementById("Sp4name").innerText = data.products[3].title;
+  document.getElementById("Sp5name").innerText = data.products[4].title;
+  document.getElementById("Sp6name").innerText = data.products[5].title;
 }
 
 function addImg(data) {
@@ -98,6 +105,20 @@ function refreshPage(){
     document.getElementById("p4num").innerText = nump[0];
     document.getElementById("p5num").innerText = nump[0];
     document.getElementById("p6num").innerText = nump[0];
+    
+    document.getElementById("Cp1num").innerText = nump[0];
+    document.getElementById("Cp2num").innerText = nump[0];
+    document.getElementById("Cp3num").innerText = nump[0];
+    document.getElementById("Cp4num").innerText = nump[0];
+    document.getElementById("Cp5num").innerText = nump[0];
+    document.getElementById("Cp6num").innerText = nump[0];
+    
+    document.getElementById("Sp1num").innerText = nump[0];
+    document.getElementById("Sp2num").innerText = nump[0];
+    document.getElementById("Sp3num").innerText = nump[0];
+    document.getElementById("Sp4num").innerText = nump[0];
+    document.getElementById("Sp5num").innerText = nump[0];
+    document.getElementById("Sp6num").innerText = nump[0];
     loadBrowsePage();
 }
 
@@ -110,36 +131,42 @@ function increment(a) {
       nump[0]++;
       document.getElementById("p1num").innerText = nump[0];
       document.getElementById("Cp1num").innerText = nump[0];
+      document.getElementById("Sp1num").innerText = nump[0];
       document.getElementById("p1cart").removeAttribute("hidden");
       break;
     case "p2num":
       nump[1]++;
       document.getElementById("p2num").innerText = nump[1];
       document.getElementById("Cp2num").innerText = nump[1];
+      document.getElementById("Sp2num").innerText = nump[1];
       document.getElementById("p2cart").removeAttribute("hidden");
       break;
     case "p3num":
       nump[2]++;
       document.getElementById("p3num").innerText = nump[2];
       document.getElementById("Cp3num").innerText = nump[2];
+      document.getElementById("Sp3num").innerText = nump[2];
       document.getElementById("p3cart").removeAttribute("hidden");
       break;
     case "p4num":
       nump[3]++;
       document.getElementById("p4num").innerText = nump[3];
       document.getElementById("Cp4num").innerText = nump[3];
+      document.getElementById("Sp4num").innerText = nump[3];
       document.getElementById("p4cart").removeAttribute("hidden");
       break;
     case "p5num":
       nump[4]++;
       document.getElementById("p5num").innerText = nump[4];
       document.getElementById("Cp5num").innerText = nump[4];
+      document.getElementById("Sp5num").innerText = nump[4];
       document.getElementById("p5cart").removeAttribute("hidden");
       break;
     case "p6num":
       nump[5]++;
       document.getElementById("p6num").innerText = nump[5];
       document.getElementById("Cp6num").innerText = nump[5];
+      document.getElementById("Sp6num").innerText = nump[5];
       document.getElementById("p6cart").removeAttribute("hidden");
       break;
   }
@@ -151,48 +178,60 @@ function decrement(a) {
       if (nump[0] > 0) nump[0]--;
       document.getElementById("p1num").innerText = nump[0];
       document.getElementById("Cp1num").innerText = nump[0];
+      document.getElementById("Sp1num").innerText = nump[0];
       if (nump[0] == 0) {
         document.getElementById("p1cart").setAttribute("hidden", "hidden");
+        document.getElementById("p1sum").setAttribute("hidden", "hidden");
       }
       break;
     case "p2num":
       if (nump[1] > 0) nump[1]--;
       document.getElementById("p2num").innerText = nump[1];
       document.getElementById("Cp2num").innerText = nump[1];
+      document.getElementById("Sp2num").innerText = nump[1];
       if (nump[1] == 0) {
         document.getElementById("p2cart").setAttribute("hidden", "hidden");
+        document.getElementById("p2sum").setAttribute("hidden", "hidden");
       }
       break;
     case "p3num":
       if (nump[2] > 0) nump[2]--;
       document.getElementById("p3num").innerText = nump[2];
       document.getElementById("Cp3num").innerText = nump[2];
+      document.getElementById("Sp3num").innerText = nump[2];
       if (nump[2] == 0) {
         document.getElementBy("p3cart").setAttribute("hidden", "hidden");
+        document.getElementBy("p3sum").setAttribute("hidden", "hidden");
       }
       break;
     case "p4num":
       if (nump[3] > 0) nump[3]--;
       document.getElementById("p4num").innerText = nump[3];
       document.getElementById("Cp4num").innerText = nump[3];
+      document.getElementById("Sp4num").innerText = nump[3];
       if (nump[3] == 0) {
         document.getElementById("p4cart").setAttribute("hidden", "hidden");
+        document.getElementById("p4sum").setAttribute("hidden", "hidden");
       }
       break;
     case "p5num":
       if (nump[4] > 0) nump[4]--;
       document.getElementById("p5num").innerText = nump[4];
       document.getElementById("Cp5num").innerText = nump[4];
+      document.getElementById("Sp5num").innerText = nump[4];
       if (nump[4] == 0) {
         document.getElementById("p5cart").setAttribute("hidden", "hidden");
+        document.getElementById("p5sum").setAttribute("hidden", "hidden");
       }
       break;
     case "p6num":
       if (nump[5] > 0) nump[5]--;
       document.getElementById("p6num").innerText = nump[5];
       document.getElementById("Cp6num").innerText = nump[5];
+      document.getElementById("Sp6sum").innerText = nump[5];
       if (nump[5] == 0) {
         document.getElementById("p6cart").setAttribute("hidden", "hidden");
+        document.getElementById("p6sum").setAttribute("hidden", "hidden");
       }
       break;
   }
