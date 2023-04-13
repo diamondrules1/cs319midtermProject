@@ -58,18 +58,19 @@ function loadCheckoutPage(){
     summary.setAttribute("hidden","hidden");
 }
 function loadConfirmationPage(){
-    let itemTypes = 0;
-    let list = "";
-    for (let i = 0; i < 6; i++){
-        if (nump[i] > 0){
-            itemTypes++;
-            list += "<li>"+productList.products[i].title + "....................$" + (productList.products[i].price * nump[i])+"</li>";
+        let itemTypes = 0;
+        let list = "";
+        for (let i = 0; i < 6; i++){
+            if (nump[i] > 0){
+                itemTypes++;
+                list += "<li>"+productList.products[i].title + "....................$" + (productList.products[i].price * nump[i])+"</li>";
+            }
         }
-    }
-    document.getElementById("summaryList").innerHTML = list;
-    summary.removeAttribute("hidden");
-    cartView.setAttribute("hidden","hidden");
-    browse.setAttribute("hidden","hidden");
+        document.getElementById("summaryList").innerHTML = list;
+        summary.removeAttribute("hidden");
+        cartView.setAttribute("hidden","hidden");
+        browse.setAttribute("hidden","hidden");
+    
 }
 function refreshPage(){
     nump = [0,0,0,0,0,0];
@@ -142,3 +143,35 @@ function decrement(a) {
       break;
   }
 }
+ function validate(){
+    val = true;
+    let email = document.getElementById('inputEmail4')
+    let name = document.getElementById('inputName')
+    let card = document.getElementById('inputCard')
+    let form = document.getElementById('checkout-form')
+    if (!email.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+        email.setAttribute("class", "form-control is-invalid");
+        val = false;
+    } else {
+        email.setAttribute("class", "form-control is-valid");
+        order.email = email.value
+    }
+    if (name.value.length == 0){
+        name.setAttribute("class","form-control is-invalid")
+        val = false
+    }else{
+        name.setAttribute("class", "form-control is-valid");
+        order.name = name.value
+    }
+    if (!card.value.match(/^[0-9]{4}\-[0-9]{4}\-[0-9]{4}\-[0-9]{4}$/)){
+        card.setAttribute("class","form-control is-invalid")
+        val = false
+    }else{
+        card.setAttribute("class", "form-control is-valid");
+        order.card = card.value
+    }
+    if (val){
+        loadConfirmationPage();
+    }
+ }
+
