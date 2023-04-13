@@ -1,6 +1,42 @@
-fetch('https://fakestoreapi.com/products/1')
-            .then(res=>res.json())
-            .then(json=>console.log(json));
+fetch("selected_products.json")
+    .then(response => response.json())
+    .then(data => dataToHTML(data));
+
+function dataToHTML(data){
+    appendDesc(data);
+    addImg(data);
+}
+
+function readJSON(file){
+    fetch(file)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error:' + err);
+        })
+}
+
+function appendDesc(data){
+    document.getElementById("p1desc").innerText = data.products[0].description;
+    document.getElementById("p2desc").innerText = data.products[1].description;
+    document.getElementById("p3desc").innerText = data.products[2].description;
+    document.getElementById("p4desc").innerText = data.products[3].description;
+    document.getElementById("p5desc").innerText = data.products[4].description;
+    document.getElementById("p6desc").innerText = data.products[5].description;
+}
+
+function addImg(data){
+    document.getElementById("p1img").src = data.products[0].image;
+    document.getElementById("p2img").src = data.products[1].image;
+    document.getElementById("p3img").src = data.products[2].image;
+    document.getElementById("p4img").src = data.products[3].image;
+    document.getElementById("p5img").src = data.products[4].image;
+    document.getElementById("p6img").src = data.products[5].image;
+}
 let browse = document.getElementById("browse");
 let cartView = document.getElementById("cart");
 let summary = document.getElementById("confirmation");
@@ -20,7 +56,7 @@ function loadConfirmationPage(){
     cartView.setAttribute("hidden","hidden");
     browse.setAttribute("hidden","hidden");
 }
-loadBrowsePage();
+
 var nump = [];
 nump = [0, 0, 0, 0, 0, 0];
 
