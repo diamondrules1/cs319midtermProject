@@ -6,6 +6,7 @@ let productList;
 function dataToHTML(data){
     appendDesc(data);
     addImg(data);
+    appendName(data);
     productList = data;
 }
 
