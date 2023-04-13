@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react";
+
 import items from "./selected_products.json";
 const Shop = () => {
-    const [cart, setCart] = useState([]);
-    const [cartTotal, setCartTotal] = useState(0);
+    const [cart, setCart] = [];
+    const [cartTotal, setCartTotal] = 0;
     useEffect(() => {
         total();
     }, [cart]);
