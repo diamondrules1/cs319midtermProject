@@ -10,8 +10,11 @@ fetch('https://fakestoreapi.com/products/1')
             .then(json=>console.log(json));
 const browse = getElementById("browse");
 const cart = getElementById("cart");
-const summary = getElementById("summary");
-
+const summary = getElementById("confirmation");
+const checkout = getElementById("checkout");
+const order = getElementById("order");
+const close = getElementById("close");
+const returnCheck = getElementById("return");
 function loadBrowsePage(){
     browse.removeAttribute("hidden");
     cart.hidden;
@@ -26,5 +29,19 @@ function loadConfirmationPage(){
     summary.removeAttribute("hidden");
     cart.hidden;
     browse.hidden;
+
 }
+checkout.addEventListener("submit", event => {
+    loadCheckoutPage();
+});
+order.addEventListener("submit",event => {
+    loadConfirmationPage();
+});
+close.addEventListener("submit", event => {
+    loadBrowsePage();
+    Shop.clearCart();
+});
+returnCheck.addEventListener("submit", event => {
+    loadBrowsePage();
+})
 loadBrowsePage();
