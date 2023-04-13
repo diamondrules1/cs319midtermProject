@@ -9,14 +9,48 @@ root.render(
   </React.StrictMode>
 );
 
-fetch("https://fakestoreapi.com/products/1")
-  .then((res) => res.json())
-  .then((json) => console.log(json));
+fetch('https://fakestoreapi.com/products/1')
+            .then(res=>res.json())
+            .then(json=>console.log(json));
+const browse = getElementById("browse");
+const cartView = getElementById("cart");
+const summary = getElementById("confirmation");
+const checkout = getElementById("checkout");
+const order = getElementById("order");
+const close = getElementById("close");
+const returnCheck = getElementById("return");
+function loadBrowsePage(){
+    browse.removeAttribute("hidden");
+    cartView.hidden;
+    summary.hidden;
+}
+function loadCheckoutPage(){
+    cartView.removeAttribute("hidden");
+    browse.hidden;
+    summary.hidden;
+}
+function loadConfirmationPage(){
+    summary.removeAttribute("hidden");
+    cartView.hidden;
+    browse.hidden;
 
+}
+checkout.addEventListener("submit", event => {
+    loadCheckoutPage();
+});
+order.addEventListener("submit",event => {
+    loadConfirmationPage();
+});
+close.addEventListener("submit", event => {
+    loadBrowsePage();
+    Shop.clearCart();
+});
+returnCheck.addEventListener("submit", event => {
+    loadBrowsePage();
+})
+loadBrowsePage();
 
-let cart = {};
-
-cart = {
+let cart = {
   p1num: 0,
   p2num: 0,
   p3num: 0,
