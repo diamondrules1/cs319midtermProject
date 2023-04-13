@@ -155,19 +155,21 @@
                   >
                     <div class="btn-group">
                       <button
+                        onclick="increment('p1num')"
                         type="button"
                         class="btn btn-sm btn-outline-secondary"
                       >
                         +
                       </button>
                       <button
+                        onclick="decrement('p1num')"
                         type="button"
                         class="btn btn-sm btn-outline-secondary"
                       >
                         -
                       </button>
                     </div>
-                    <small id="p1num" class="text-muted">placeholder for amount of product</small>
+                    <small id="p1num" class="text-muted">0</small>
                   </div>
                 </div>
               </div>
@@ -196,19 +198,21 @@
                   >
                     <div class="btn-group">
                       <button
+                        onclick="increment('p2num')"
                         type="button"
                         class="btn btn-sm btn-outline-secondary"
                       >
                         +
                       </button>
                       <button
+                        onclick="decrement('p2num')"
                         type="button"
                         class="btn btn-sm btn-outline-secondary"
                       >
                         -
                       </button>
                     </div>
-                    <small id="p2num" class="text-muted">placeholder for amount of product</small>
+                    <small id="p2num" class="text-muted">0</small>
                   </div>
                 </div>
               </div>
@@ -248,7 +252,7 @@
                         -
                       </button>
                     </div>
-                    <small id="p3num" class="text-muted">placeholder for amount of product</small>
+                    <small id="p3num" class="text-muted">0</small>
                   </div>
                 </div>
               </div>
@@ -289,7 +293,7 @@
                         -
                       </button>
                     </div>
-                    <small id="p4num" class="text-muted">placeholder for amount of product</small>
+                    <small id="p4num" class="text-muted">0</small>
                   </div>
                 </div>
               </div>
@@ -317,6 +321,7 @@
                   >
                     <div class="btn-group">
                       <button
+                        onclick="increment('p5num')"
                         type="button"
                         class="btn btn-sm btn-outline-secondary"
                       >
@@ -329,7 +334,7 @@
                         -
                       </button>
                     </div>
-                    <small id="p5num" class="text-muted">placeholder for amount of product</small>
+                    <small id="p5num" class="text-muted">0</small>
                   </div>
                 </div>
               </div>
@@ -383,6 +388,9 @@
     <div id="cart" class="container">
       <h1>This is the cart page!</h1>
       <div class="container">
+        <div class="cart">
+          
+        </div>
        <div class="col-12">
               <label for="address" class="form-label">Address</label>
               <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
