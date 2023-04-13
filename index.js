@@ -33,26 +33,26 @@ function appendDesc(data) {
 }
 
 function appendName(data) {
-  document.getElementById("p1name").innerText = data.products[0].title;
-  document.getElementById("p2name").innerText = data.products[1].title;
-  document.getElementById("p3name").innerText = data.products[2].title;
-  document.getElementById("p4name").innerText = data.products[3].title;
-  document.getElementById("p5name").innerText = data.products[4].title;
-  document.getElementById("p6name").innerText = data.products[5].title;
+  document.getElementById("p1name").innerText = data.products[0].title + " $" + data.products[0].price;
+  document.getElementById("p2name").innerText = data.products[1].title + " $" + data.products[1].price;
+  document.getElementById("p3name").innerText = data.products[2].title + " $" + data.products[2].price;
+  document.getElementById("p4name").innerText = data.products[3].title + " $" + data.products[3].price;
+  document.getElementById("p5name").innerText = data.products[4].title + " $" + data.products[4].price;
+  document.getElementById("p6name").innerText = data.products[5].title + " $" + data.products[5].price;
 
-  document.getElementById("Cp1name").innerText = data.products[0].title;
-  document.getElementById("Cp2name").innerText = data.products[1].title;
-  document.getElementById("Cp3name").innerText = data.products[2].title;
-  document.getElementById("Cp4name").innerText = data.products[3].title;
-  document.getElementById("Cp5name").innerText = data.products[4].title;
-  document.getElementById("Cp6name").innerText = data.products[5].title;
+  document.getElementById("Cp1name").innerText = data.products[0].title + " $" + data.products[0].price;
+  document.getElementById("Cp2name").innerText = data.products[1].title + " $" + data.products[1].price;
+  document.getElementById("Cp3name").innerText = data.products[2].title + " $" + data.products[2].price;
+  document.getElementById("Cp4name").innerText = data.products[3].title + " $" + data.products[3].price;
+  document.getElementById("Cp5name").innerText = data.products[4].title + " $" + data.products[4].price;
+  document.getElementById("Cp6name").innerText = data.products[5].title + " $" + data.products[5].price;
   
-  document.getElementById("Sp1name").innerText = data.products[0].title;
-  document.getElementById("Sp2name").innerText = data.products[1].title;
-  document.getElementById("Sp3name").innerText = data.products[2].title;
-  document.getElementById("Sp4name").innerText = data.products[3].title;
-  document.getElementById("Sp5name").innerText = data.products[4].title;
-  document.getElementById("Sp6name").innerText = data.products[5].title;
+  document.getElementById("Sp1name").innerText = data.products[0].title + " $" + data.products[0].price;
+  document.getElementById("Sp2name").innerText = data.products[1].title + " $" + data.products[1].price;
+  document.getElementById("Sp3name").innerText = data.products[2].title + " $" + data.products[2].price;
+  document.getElementById("Sp4name").innerText = data.products[3].title + " $" + data.products[3].price;
+  document.getElementById("Sp5name").innerText = data.products[4].title + " $" + data.products[4].price;
+  document.getElementById("Sp6name").innerText = data.products[5].title + " $" + data.products[5].price;
 }
 
 function addImg(data) {
