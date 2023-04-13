@@ -37,9 +37,14 @@ function addImg(data){
     document.getElementById("p5img").src = data.products[4].image;
     document.getElementById("p6img").src = data.products[5].image;
 }
-let browse = document.getElementById("browse");
-let cartView = document.getElementById("cart");
-let summary = document.getElementById("confirmation");
+let browse;
+let cartView;
+let summary;
+function onLoad(){
+    browse = document.getElementById("browse");
+    cartView = document.getElementById("cart");
+    summary = document.getElementById("confirmation");
+}
 function loadBrowsePage(){
     browse.removeAttribute("hidden");
     cartView.setAttribute("hidden","hidden");
