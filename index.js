@@ -133,6 +133,7 @@ function increment(a) {
       document.getElementById("Cp1num").innerText = nump[0];
       document.getElementById("Sp1num").innerText = nump[0];
       document.getElementById("p1cart").removeAttribute("hidden");
+      document.getElementById("p1sum").removeAttribute("hidden");
       break;
     case "p2num":
       nump[1]++;
@@ -140,6 +141,7 @@ function increment(a) {
       document.getElementById("Cp2num").innerText = nump[1];
       document.getElementById("Sp2num").innerText = nump[1];
       document.getElementById("p2cart").removeAttribute("hidden");
+      document.getElementById("p2sum").removeAttribute("hidden");
       break;
     case "p3num":
       nump[2]++;
@@ -147,6 +149,7 @@ function increment(a) {
       document.getElementById("Cp3num").innerText = nump[2];
       document.getElementById("Sp3num").innerText = nump[2];
       document.getElementById("p3cart").removeAttribute("hidden");
+      document.getElementById("p3sum").removeAttribute("hidden");
       break;
     case "p4num":
       nump[3]++;
@@ -154,6 +157,7 @@ function increment(a) {
       document.getElementById("Cp4num").innerText = nump[3];
       document.getElementById("Sp4num").innerText = nump[3];
       document.getElementById("p4cart").removeAttribute("hidden");
+      document.getElementById("p4sum").removeAttribute("hidden");
       break;
     case "p5num":
       nump[4]++;
@@ -161,6 +165,7 @@ function increment(a) {
       document.getElementById("Cp5num").innerText = nump[4];
       document.getElementById("Sp5num").innerText = nump[4];
       document.getElementById("p5cart").removeAttribute("hidden");
+      document.getElementById("p5sum").removeAttribute("hidden");
       break;
     case "p6num":
       nump[5]++;
@@ -168,6 +173,7 @@ function increment(a) {
       document.getElementById("Cp6num").innerText = nump[5];
       document.getElementById("Sp6num").innerText = nump[5];
       document.getElementById("p6cart").removeAttribute("hidden");
+      document.getElementById("p6sum").removeAttribute("hidden");
       break;
   }
 }
