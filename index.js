@@ -20,6 +20,7 @@ function loadConfirmationPage(){
     cartView.setAttribute("hidden","hidden");
     browse.setAttribute("hidden","hidden");
 }
+loadBrowsePage();
 var nump = [];
 nump = [0, 0, 0, 0, 0, 0];
 
