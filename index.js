@@ -76,18 +76,18 @@ function loadCheckoutPage() {
   summary.setAttribute("hidden", "hidden");
 }
 function loadConfirmationPage(){
-        let itemTypes = 0;
-        let list = "";
-        for (let i = 0; i < 6; i++){
-            if (nump[i] > 0){
-                itemTypes++;
-                list += "<li>"+productList.products[i].title + "....................$" + (productList.products[i].price * nump[i])+"</li>";
-            }
+    let itemTypes = 0;
+    let list = "";
+    for (let i = 0; i < 6; i++){
+        if (nump[i] > 0){
+            itemTypes++;
+            list += "<li>"+productList.products[i].title + "....................$" + (productList.products[i].price * nump[i])+"</li>";
         }
-        document.getElementById("summaryList").innerHTML = list;
-        summary.removeAttribute("hidden");
-        cartView.setAttribute("hidden","hidden");
-        browse.setAttribute("hidden","hidden");
+    }
+    document.getElementById("summaryList").innerHTML = list;
+    summary.removeAttribute("hidden");
+    cartView.setAttribute("hidden","hidden");
+    browse.setAttribute("hidden","hidden");
     
 }
 function refreshPage(){
@@ -208,21 +208,18 @@ function decrement(a) {
         val = false;
     } else {
         email.setAttribute("class", "form-control is-valid");
-        order.email = email.value
     }
     if (name.value.length == 0){
         name.setAttribute("class","form-control is-invalid")
         val = false
     }else{
         name.setAttribute("class", "form-control is-valid");
-        order.name = name.value
     }
     if (!card.value.match(/^[0-9]{4}\-[0-9]{4}\-[0-9]{4}\-[0-9]{4}$/)){
         card.setAttribute("class","form-control is-invalid")
         val = false
     }else{
         card.setAttribute("class", "form-control is-valid");
-        order.card = card.value
     }
     if (val){
         loadConfirmationPage();
