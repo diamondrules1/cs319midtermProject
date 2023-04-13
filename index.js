@@ -5,21 +5,21 @@ let browse = document.getElementById("browse");
 let cartView = document.getElementById("cart");
 let summary = document.getElementById("confirmation");
 function loadBrowsePage(){
-    browse.hidden = false;
-    cartView.hidden = true;
-    summary.hidden = true;
+    browse.removeAttribute("hidden");
+    cartView.setAttribute("hidden","hidden");
+    summary.setAttribute("hidden","hidden");
 }
 function loadCheckoutPage(){
-    cartView.hidden = false;
-    browse.hidden = true;
-    summary.hidden = true;
+    cartView.removeAttribute("hidden");
+    browse.setAttribute("hidden","hidden");
+    summary.setAttribute("hidden","hidden");
 }
 function loadConfirmationPage(){
     summary.innerHTML = Shop.listItemsNoButtons();
-    summary.hidden = false;
-    cartView.hidden = true;
-    browse.hidden = true;
-
+    summary.removeAttribute("hidden");
+    cartView.setAttribute("hidden","hidden");
+    browse.setAttribute("hidden","hidden");
+}
 var nump = [];
 nump = [0, 0, 0, 0, 0, 0];
 
