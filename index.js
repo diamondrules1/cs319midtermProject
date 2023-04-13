@@ -1,54 +1,31 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Shop from "./shop/Shop";
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <Shop />
-  </React.StrictMode>
-);
-
 fetch('https://fakestoreapi.com/products/1')
             .then(res=>res.json())
             .then(json=>console.log(json));
-const browse = getElementById("browse");
-const cartView = getElementById("cart");
-const summary = getElementById("confirmation");
-const checkout = getElementById("checkout");
-const order = getElementById("order");
-const close = getElementById("close");
-const returnCheck = getElementById("return");
+let browse = document.getElementById("browse");
+let cartView = document.getElementById("cart");
+let summary = document.getElementById("confirmation");
 function loadBrowsePage(){
-    browse.removeAttribute("hidden");
-    cartView.hidden;
-    summary.hidden;
+    browse.hidden = false;
+    cartView.hidden = true;
+    summary.hidden = true;
 }
 function loadCheckoutPage(){
-    cartView.removeAttribute("hidden");
-    browse.hidden;
-    summary.hidden;
+    cartView.hidden = false;
+    browse.hidden = true;
+    summary.hidden = true;
 }
 function loadConfirmationPage(){
-    summary.removeAttribute("hidden");
-    cartView.hidden;
-    browse.hidden;
+    summary.innerHTML = Shop.listItemsNoButtons();
+    summary.hidden = false;
+    cartView.hidden = true;
+    browse.hidden = true;
 
 }
-checkout.addEventListener("submit", event => {
-    loadCheckoutPage();
-});
-order.addEventListener("submit",event => {
-    loadConfirmationPage();
-});
-close.addEventListener("submit", event => {
+function refreshPage(){
     loadBrowsePage();
     Shop.clearCart();
-});
-returnCheck.addEventListener("submit", event => {
-    loadBrowsePage();
-})
-loadBrowsePage();
+}
+
 
 let cart = {
   p1num: 0,
