@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment3</title>
+</head>
+<body>
+    <h1>Get Method.</h1>
+    <button onclick="getMethod()">Show All Products</button>
+    <form>
+
+    </form>
+    <h1>Get MethodById.</h1>
+    <button onclick="getMethodById()">Show Product by ID</button>
+    <h1>Post Method. </h1>
+    <button onclick="postMethod()">Post user</button>
+    <h1>DELETE Method .</h1>
+    <button onclick="deleteMethod()">Delete</button>
+    <hr>
+    <h1>Output:</h1>
+    <pre id="showData"></pre>
+    <script>
+function getMethod() {
+    fetch('http://localhost:8081/listProducts')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        var container = document.getElementById("showData");
+        container.innerHTML = JSON.stringify(data,undefined,2);
+    })
+};
+function getMethodById() {
+    fetch('http://localhost:8081/' + Number(id.innerHTML))
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        var container = document.getElementById("showData");
+        container.innerHTML = JSON.stringify(data,undefined,2);
+    });
+};
+function postMethod() {
+    fetch('http://localhost:8081/addProduct', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+            "product21": {
+            "title": "Opna Women's Short Sleeve Moisture",
+            "price": 7.95,
+            "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machi…",
+            "category":"women's clothing",
+            "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+            "rating":{
+                "rate": 4.5,
+                "count": 146
+            },
+            "id": 21,
+        }
+        })
+        })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        var container = document.getElementById("showData");
+        container.innerHTML = JSON.stringify(data);
+    });
+}
+function deleteMethod() {
+    console.log("Lets do Delete ....");
+    fetch('http://localhost:8081/deleteProduct', {
+        method: "DELETE",
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+            "product21": {
+            
+        }
+    })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((err) => console.log("Error:" + err))
+}
+</script>
+</body>
+</body>
+</html>
