@@ -16,6 +16,15 @@ const url = "mongodb://127.0.0.1:27017";
 const dbName = "products";
 const client = new MongoClient(url);
 const db = client.db(dbName);
+app.get("/nextId", async(req, res) => {
+    await client.connect();
+    console.log("Node connected successfully to GET mongodb");
+    const query = {};
+    const results = await db.collection("products_assignment3").find(query).limit(100).toArray();
+    console.log(results);
+    res.status(200);
+    res.send(results);
+});
 app.get("/listProducts",async(req,res) => {
     await client.connect();
     console.log("Node connected successfully to GET mongodb");
@@ -46,7 +55,7 @@ app.post("/addProduct", async (req, res) => {
     const k = keys[0];
     const v = values[0];
     console.log("Keys :", k, " Values", v);
-    const newDocument = { id: "21", [k]: [v] };
+    const newDocument = { [k]: [v] };
     const results = await db.collection("products_assignment3").insertOne(newDocument);
     res.status(200);
     res.send(results);
