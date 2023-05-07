@@ -29,3 +29,4 @@
 /rest_with_mysql_backend/node_modules/mime-db/db.json filter=lfs diff=lfs merge=lfs -text
 /rest_with_mysql_backend/node_modules/mysql/lib/protocol/constants/errors.js filter=lfs diff=lfs merge=lfs -text
 /rest_with_mysql_frontend/package-lock.json filter=lfs diff=lfs merge=lfs -text
+/inital_app/package-lock.json filter=lfs diff=lfs merge=lfs -text
