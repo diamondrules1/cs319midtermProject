@@ -24,3 +24,4 @@
 /node_modules/mongodb/mongodb.d.ts filter=lfs diff=lfs merge=lfs -text
 /node_modules/saslprep/code-points.mem filter=lfs diff=lfs merge=lfs -text
 /node_modules/tr46/lib/mappingTable.json filter=lfs diff=lfs merge=lfs -text
+/AllPrintings.sql filter=lfs diff=lfs merge=lfs -text
