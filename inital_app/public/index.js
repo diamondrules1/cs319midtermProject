@@ -1,12 +1,12 @@
 let homePage, aboutPage, wantList, cardSearch, accountPage;
 
-function onLoad() {
+window.onload(
   homePage = document.getElementById("homePage");
   aboutPage = document.getElementById("aboutPage");
   wantList = document.getElementById("wantList");
   cardSearch = document.getElementById("cardSearch");
   accountPage = document.getElementById("accountPage");
-}
+)
 
 function loadHomePage() { 
   homePage.removeAttribute("hidden");
