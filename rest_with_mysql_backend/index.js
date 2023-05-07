@@ -29,6 +29,18 @@ app.get("/api/getFromId/:id", (req,res) => {
         }
     );
 });
+app.get("/api/getCardByName/:name", (req,res) => {
+    const cardName = req.params.cardName;
+    db.query(
+        "SELECT * FROM Card WHERE cardName = ?", cardName,
+        (err, result) => {
+            if (err){
+                console.log(err);
+            }
+            res.send(result);
+        }
+    );
+});
 app.post("/api/create", (req,res) => {
     const id = req.body.id;
     const username = req.body.username;

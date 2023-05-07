@@ -21,19 +21,39 @@ function getAllUsers(){
     setViewer1(!viewer1);
 }
 const showAllItems = user.map((el) => (
-    <div key={el.id}>
+    <div key={el.uid}>
     Username: {el.username} <br />
     Email: {el.email} <br />
     Password: {el.password} <br />
     </div>
 ));
-function getOneUser(id){
-    console.log(id);
-    if (id >= 1){
-        fetch("http://127.0.0.1:4000/api/getFromId/"+id)
+function getCardByName(cardName){
+    console.log(cardName);
+        fetch("http://127.0.0.1:4000/api/getCardByName/"+cardName)
         .then((response) => response.json())
         .then((data) => {
             console.log("Show one user :", id);
+            console.log(data);
+            // const dataArr = [];
+            // dataArr.push(data);
+            setOneUser(data);
+        });
+        setViewer2(!viewer2);
+}
+const showCardResults = oneCard.map((el) => (
+    <div key={el.cid}>
+    Name: {el.cardName} <br />
+    Email: {el.email} <br />
+    Password: {el.password} <br />
+    </div>
+));
+function getOneUser(uid){
+    console.log(uid);
+    if (id >= 1){
+        fetch("http://127.0.0.1:4000/api/getFromId/"+uid)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Show one user :", uid);
             console.log(data);
             // const dataArr = [];
             // dataArr.push(data);
@@ -45,7 +65,7 @@ function getOneUser(id){
     }
 }
 const showOneItem = oneUser.map((el) => (
-    <div key={el.id}>
+    <div key={el.uid}>
     Username: {el.username} <br />
     Email: {el.email} <br />
     Password: {el.password} <br />
@@ -53,8 +73,8 @@ const showOneItem = oneUser.map((el) => (
 ));
 function handleChange(evt) {
     const value = evt.target.value;
-    if (evt.target.name === "id") {
-        setAddNewUser({ ...addNewUser, id: value });
+    if (evt.target.name === "uid") {
+        setAddNewUser({ ...addNewUser, uid: value });
     } else if (evt.target.name === "username") {
         setAddNewUser({ ...addNewUser, username: value });
     } else if (evt.target.name === "email") {
