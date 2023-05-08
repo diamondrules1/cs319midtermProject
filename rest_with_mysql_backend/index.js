@@ -9,26 +9,7 @@ app.listen(PORT, () => {
     console.log(`Server is running on ${PORT}`);
 });
 
-app.get("/api/get", (req, res) => {
-    db.query("SELECT * FROM User", (err,result) => {
-        if (err){
-            console.log(err);
-        }
-        res.send(result);
-    });
-});
-app.get("/api/getFromId/:id", (req,res) => {
-    const id = req.params.id;
-    db.query(
-        "SELECT * FROM User WHERE id = ?", id,
-        (err, result) => {
-            if (err){
-                console.log(err);
-            }
-            res.send(result);
-        }
-    );
-});
+
 app.get("/api/getCardByName/:name", (req,res) => {
     const cardName = req.params.cardName;
     db.query(
@@ -41,33 +22,21 @@ app.get("/api/getCardByName/:name", (req,res) => {
         }
     );
 });
-app.post("/api/create", (req,res) => {
-    const id = req.body.id;
-    const username = req.body.username;
-    const password = req.body.password;
-    const email = req.body.email;
-    console.log(id, username, password, email);
-    db.query(
-        "INSERT INTO User (id, username, password, email) VALUES (?,?,?,?)", 
-        [id, username, password, email],
-        (err, result) => {
-            if (err){
-                console.log(err);
-            }
-            console.log(result);
-        }
-    );
-});
-app.delete("/api/delete/:id", (req,res) => {
+app.post("/api/like/:id/:dAmt", (req,res) => {
     const id = req.params.id;
-    db.query(
-        "DELETE FROM User WHERE id = ?", id,
-        (err, result) => {
-            if (err){
-                console.log(err);
-            } else {
-                res.send(result);
+    const decreaseAmount = req.params.dAmt;
+    console.log(id, username, password, email);
+    for (let x = 0; x < decreaseAmount; x++){
+        db.query(
+            "UPDATE Card SET quantity = quantity - 1 WHERE id = ?", 
+            id,
+            (err, result) => {
+                if (err){
+                    console.log(err);
+                }
+                console.log(result);
             }
-        }
-    );
+        );
+    }
+    
 });

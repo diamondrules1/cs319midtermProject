@@ -9,24 +9,6 @@ root.render(
         <App />
     </React.StrictMode>
 );
-
-function getAllUsers(){
-    fetch("http://127.0.0.1:4000/api/get")
-    .then((response) => response.json())
-    .then((data) => {
-        console.log("Show all users");
-        console.log(data);
-        setUser(data);
-    });
-    setViewer1(!viewer1);
-}
-const showAllItems = user.map((el) => (
-    <div key={el.uid}>
-    Username: {el.username} <br />
-    Email: {el.email} <br />
-    Password: {el.password} <br />
-    </div>
-));
 function getCardByName(cardName){
     console.log(cardName);
         fetch("http://127.0.0.1:4000/api/getCardByName/"+cardName)
@@ -34,66 +16,48 @@ function getCardByName(cardName){
         .then((data) => {
             console.log("Show one user :", id);
             console.log(data);
-            // const dataArr = [];
-            // dataArr.push(data);
-            setOneUser(data);
+            const dataArr = [];
+            dataArr.push(data);
+            setOneCard(data);
         });
         setViewer2(!viewer2);
+        return showCardResults;
 }
 const showCardResults = oneCard.map((el) => (
     <div key={el.cid}>
     Name: {el.cardName} <br />
-    Email: {el.email} <br />
-    Password: {el.password} <br />
+    Price: {el.price} <br />
+    Rarity: {el.rarity} <br />
+    Card Set: {el.cardSet} <br />
+    Description: {el.description} <br />
+    In Stock: {el.quantity} <br />
     </div>
 ));
-function getOneUser(uid){
-    console.log(uid);
-    if (id >= 1){
-        fetch("http://127.0.0.1:4000/api/getFromId/"+uid)
+function reduceStock(cid){
+    console.log(cid);
+        fetch("http://127.0.0.1:4000/api/like/"+cid+"/"+dAmt)
         .then((response) => response.json())
         .then((data) => {
-            console.log("Show one user :", uid);
+            console.log("Show one user :", id);
             console.log(data);
-            // const dataArr = [];
-            // dataArr.push(data);
-            setOneUser(data);
+            const dataArr = [];
+            dataArr.push(data);
+            setOneCard(data);
         });
         setViewer2(!viewer2);
-    } else {
-        console.log("Wrong number of user id");
-    }
-}
-const showOneItem = oneUser.map((el) => (
-    <div key={el.uid}>
-    Username: {el.username} <br />
-    Email: {el.email} <br />
-    Password: {el.password} <br />
-    </div>
-));
-function handleChange(evt) {
-    const value = evt.target.value;
-    if (evt.target.name === "uid") {
-        setAddNewUser({ ...addNewUser, uid: value });
-    } else if (evt.target.name === "username") {
-        setAddNewUser({ ...addNewUser, username: value });
-    } else if (evt.target.name === "email") {
-        setAddNewUser({ ...addNewUser, email: value });
-    } else if (evt.target.name === "password") {
-        setAddNewUser({ ...addNewUser, password: value });
-    }
+        return showCardResults;
 }
 function handleOnSubmit(e) {
     e.preventDefault();
     console.log(e.target.value);
-    fetch("http://127.0.0.1:4000/api/create", {
+    fetch("http://127.0.0.1:4000/api/update", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(addNewUser),
+        body: JSON.stringify(removeQuantity),
     })
     .then((response) => response.json())
     .then((data) => {
-    console.log("Post a new user completed");
+    console.log("Removed quantity completed");
     console.log(data);
         if (data) {
             //const keys = Object.keys(data);
@@ -102,26 +66,7 @@ function handleOnSubmit(e) {
         }
     });
 }
-function deleteOneUser(deleteid) {
-    console.log("User to delete :", deleteid);
-    fetch("http://127.0.0.1:4000/api/delete/" + deleteid, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user[index]),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        console.log("Delete a user completed : ",
-        deleteid);
-        console.log(data);
-        if (data) {
-            //const keys = Object.keys(data);
-            const value = Object.values(data);
-            alert(value);
-        }
-    });
-    setChecked4(!checked4);
-}
+
 useEffect(() => {
     getAllUsers();
 }, []);
@@ -152,6 +97,6 @@ function getOneByOneUserPrev() {
             setViewer4(false);
     }
 }
-    
+
     
     
