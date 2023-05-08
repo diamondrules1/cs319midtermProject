@@ -24956,7 +24956,23 @@
               <input type="text" id="cardName" name="cardName">
             </form>
             <button onclick="search()">Search</button>
-            <div id="searchResults" hidden></div>            
+            <div id="searchResults" hidden></div>
+            <button onclick="setAside()" id="setAside"></button>
+            <script src="../../rest_with_mysql_frontend/index.js">
+              function search(){
+                let searchBox = document.getElementById("cardName");
+                let searchResults = document.getElementById("searchResults");
+                let setAside = document.getElementById("setAside");
+                searchResults.innerHTML = getCardByName(searchBox.value);
+                searchResults.removeAttribute("hidden");
+                setAside.removeAttribute("hidden");
+              }
+              function setAside(){
+                let searchBox = document.getElementById("cardName");
+                let selectedCard = getIdByName(searchBox.value);
+                reduceStock(selectedCard, 1);
+              }
+            </script>         
           </div>
         </div>
       </main>

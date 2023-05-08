@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App_MySQL";
+import { response } from "express";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,17 +24,28 @@ function getCardByName(cardName){
         setViewer2(!viewer2);
         return showCardResults;
 }
-const showCardResults = oneCard.map((el) => (
+function getIdByName(cardName){
+    fetch("http://127.0.0.1:4000/api/getIdByName/"+cardName)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+        return data;
+    });
+}
+const showCardResults = oneCard.map((el) => {
+    if(el.quantity > 0)
+    return (
     <div key={el.cid}>
     Name: {el.cardName} <br />
     Price: {el.price} <br />
     Rarity: {el.rarity} <br />
+    Color: {el.color} <br />
     Card Set: {el.cardSet} <br />
     Description: {el.description} <br />
     In Stock: {el.quantity} <br />
     </div>
-));
-function reduceStock(cid){
+); else return;});
+function reduceStock(cid, dAmt){
     console.log(cid);
         fetch("http://127.0.0.1:4000/api/like/"+cid+"/"+dAmt)
         .then((response) => response.json())

@@ -22,6 +22,18 @@ app.get("/api/getCardByName/:name", (req,res) => {
         }
     );
 });
+app.get("/api/getIdByName/:name",(req,res) => {
+    const cardName = req.params.cardName;
+    db.query(
+        "SELECT cid FROM Card WHERE cardName = ?", cardName,
+        (err, result) => {
+            if (err){
+                console.log(err);
+            }
+            res.send(result);
+        }
+    )
+})
 app.post("/api/like/:id/:dAmt", (req,res) => {
     const id = req.params.id;
     const decreaseAmount = req.params.dAmt;
