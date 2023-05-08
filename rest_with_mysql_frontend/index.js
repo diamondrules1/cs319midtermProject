@@ -14,7 +14,7 @@ function getCardByName(cardName){
         fetch("http://127.0.0.1:4000/api/getCardByName/"+cardName)
         .then((response) => response.json())
         .then((data) => {
-            console.log("Show one user :", id);
+            console.log("Show one card:", cardName);
             console.log(data);
             const dataArr = [];
             dataArr.push(data);
@@ -46,56 +46,6 @@ function reduceStock(cid){
         });
         setViewer2(!viewer2);
         return showCardResults;
-}
-function handleOnSubmit(e) {
-    e.preventDefault();
-    console.log(e.target.value);
-    fetch("http://127.0.0.1:4000/api/update", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(removeQuantity),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-    console.log("Removed quantity completed");
-    console.log(data);
-        if (data) {
-            //const keys = Object.keys(data);
-            const value = Object.values(data);
-            alert(value);
-        }
-    });
-}
-
-useEffect(() => {
-    getAllUsers();
-}, []);
-useEffect(() => {
-    getAllUsers();
-}, [checked4]);
-function getOneByOneUserNext() {
-    if (user.length > 0) {
-        if (index === user.length - 1) 
-            setIndex(0);
-        else 
-            setIndex(index + 1);
-        if (user.length > 0) 
-            setViewer4(true);
-        else 
-            setViewer4(false);
-    }
-}
-function getOneByOneUserPrev() {
-    if (user.length > 0) {
-        if (index === 0) 
-            setIndex(user.length - 1);
-        else 
-            setIndex(index - 1);
-        if (user.length > 0) 
-            setViewer4(true);
-        else 
-            setViewer4(false);
-    }
 }
 
     
