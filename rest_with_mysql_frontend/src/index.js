@@ -2,14 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App_MySQL";
-import { response } from "express";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
-);
+root.render(<React.StrictMode><App /></React.StrictMode>);
 function getCardByName(cardName){
     console.log(cardName);
         fetch("http://127.0.0.1:4000/api/getCardByName/"+cardName)
@@ -59,6 +54,16 @@ function reduceStock(cid, dAmt){
         setViewer2(!viewer2);
         return showCardResults;
 }
-
-    
-    
+window.search = function (){
+    let searchBox = document.getElementById("cardName");
+    let searchResults = document.getElementById("searchResults");
+    let setAside = document.getElementById("setAside");
+    searchResults.innerHTML = getCardByName(searchBox.value);
+    searchResults.removeAttribute("hidden");
+    setAside.removeAttribute("hidden");
+}
+window.setAsideCard = function (){
+    let searchBox = document.getElementById("cardName");
+    let selectedCard = getIdByName(searchBox.value);
+    reduceStock(selectedCard, 1);
+}
