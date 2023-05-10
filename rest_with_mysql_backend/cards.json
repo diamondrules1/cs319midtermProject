@@ -1,0 +1,32 @@
+[{
+    "cid": 1,
+    "cardName": "Sliver Hivelord",
+    "price": 22,
+    "rarity": "mythic",
+    "color": "gold",
+    "cardSet": "Magic 2015",
+    "description":"Slivers you control have indestructible.",
+    "quantity": 42069
+},
+
+{
+    "cid": 2,
+    "cardName": "Sliver Queen",
+    "price": 330,
+    "rarity": "mythic",
+    "color": "gold",
+    "cardSet": "Stronghold",
+    "description":"Sliver Queen counts as a Sliver. \n(2): Put a Sliver token into play. Treat this token as a 1/1 colorless creature.",
+    "quantity": 42
+},
+
+{
+    "cid": 3,
+    "cardName": "The First Sliver",
+    "price": 22,
+    "rarity": "mythic",
+    "color": "gold",
+    "cardSet": "Modern Horizons",
+    "description":"Cascade\nSliver spells you cast have cascade.",
+    "quantity": 69
+}]

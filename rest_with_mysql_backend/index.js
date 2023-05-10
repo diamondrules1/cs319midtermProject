@@ -1,54 +1,49 @@
 const express = require("express");
-const db = require("./db.js");
+const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const PORT = 4000;
+const Card = require("./db.js");
 app.use(cors());
 app.use(express.json());
-app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
+mongoose.connect("mongodb://127.0.0.1:4000/mtgCards",{
+    dbName: "mtgCards",
+    useNewURLParser: true,
+    useUnifiiedTopology: true,
+}
+);
+const port = process.env.PORT || 4000;
+const host = "127.0.0.1";
+app.listen(port, () => {
+    console.log(`App listening at http://%s:%s`, host, port);
 });
 
-
-app.get("/api/getCardByName/:name", (req,res) => {
-    const cardName = req.params.cardName;
-    db.query(
-        "SELECT * FROM Card WHERE cardName = ?", cardName,
-        (err, result) => {
-            if (err){
-                console.log(err);
-            }
-            res.send(result);
-        }
-    );
-});
-app.get("/api/getIdByName/:name",(req,res) => {
-    const cardName = req.params.cardName;
-    db.query(
-        "SELECT cid FROM Card WHERE cardName = ?", cardName,
-        (err, result) => {
-            if (err){
-                console.log(err);
-            }
-            res.send(result);
-        }
-    )
+app.get("/getAllCards", async (req, res) => {
+    const allCards = await Card.find({});
+    console.log(allCards);
+    express.response.send(allCards);
 })
-app.post("/api/like/:id/:dAmt", (req,res) => {
+app.get("/getCardByName/:name", async (req,res) => {
+    const name = req.params.cardName;
+    const query = {cardName: name};
+    const allCards = await Card.findOne(query);
+    console.log(allCards);
+    express.response.send(allCards);
+});
+app.get("/getIdByName/:name", async (req,res) => {
+    const name = req.params.cardName;
+    const query = {cardName: name};
+    const allCards = await Card.findOne(query);
+    console.log(allCards);
+    express.response.send(allCards);
+})
+app.post("/update/:id/:quantity", async (req,res) => {
     const id = req.params.id;
-    const decreaseAmount = req.params.dAmt;
-    console.log(id, username, password, email);
-    for (let x = 0; x < decreaseAmount; x++){
-        db.query(
-            "UPDATE Card SET quantity = quantity - 1 WHERE id = ?", 
-            id,
-            (err, result) => {
-                if (err){
-                    console.log(err);
-                }
-                console.log(result);
-            }
-        );
+    const currentQuantity = req.params.quantity - 1;
+    console.log(id, currentQuantity);
+    try {
+        await Card.updateOne({cid: id}, {quantity: currentQuantity});
+        console.log("Changed Quantity");
+    } catch (err){
+        console.log("Error while updating product: ", err);
     }
-    
 });
