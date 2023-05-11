@@ -47,7 +47,7 @@ function App() {
   });
 
   function getAllCards() {
-    fetch("http://127.0.0.1:4000/getAllCards/")
+    fetch("http://localhost:3000/getAllCards/")
       .then((response) => response.json())
       .then((data) => {
         console.log("Show all cards: ", data);
@@ -58,9 +58,10 @@ function App() {
     setViewer1(!viewer1);
   }
 
-  function getCardByName(cardName) {
+  function getCardByName() {
+    let cardName = document.getElementById("cardName").value;
     console.log(cardName);
-    fetch("http://127.0.0.1:4000/getCardByName/" + cardName)
+    fetch("http://localhost:3000/getCardByName/" + cardName)
       .then((response) => response.json())
       .then((data) => {
         console.log("Show one card: ", cardName);
@@ -76,7 +77,7 @@ function App() {
     let name = prompt("Please enter your name: ");
     if (name !== "") {
       console.log(el.cid, el.quantity);
-      fetch("http://127.0.0.1:4000/update/" + el.cid + "/" + el.quantity)
+      fetch("http://localhost:3000/update/" + el.cid + "/" + el.quantity)
         .then((response) => response.json())
         .then((data) => {
           console.log("Show one card: ", el.cid);
@@ -93,7 +94,12 @@ function App() {
     <div>
       <h1>Cards</h1>
       <button onClick={() => getAllCards()}>Show All Cards</button>
-      <label for="cardName">Search by Card Name:</label>
+      
+      <br />
+      {viewer1 && <div>Cards {showCardResults}</div>}
+      <hr></hr>
+      <h1>Searched Card</h1>
+      <label htmlFor="cardName">Search by Card Name: </label>
       <input
         type="text"
         id="cardName"
@@ -101,10 +107,8 @@ function App() {
         value={query}
         onChange={handleChange}
       />
-      <hr></hr>
-      {viewer1 && <div>Cards {showCardResults}</div>}
-      <hr></hr>
-      <h1>Searched Card</h1>
+      <br />
+      <button onClick={() => getCardByName()}>Search</button>
       {viewer2 && <div>Card: {showCardResult}</div>}
       <hr></hr>
     </div>

@@ -5,14 +5,14 @@ const app = express();
 const Card = require("./db.js");
 app.use(cors());
 app.use(express.json());
-mongoose.connect("mongodb://127.0.0.1:4000/mtgCards",{
+mongoose.connect("mongodb://127.0.0.1:27017/mtgCards",{
     dbName: "mtgCards",
     useNewURLParser: true,
     useUnifiedTopology: true,
 }
 );
-const port = process.env.PORT || 4000;
-const host = "127.0.0.1";
+const port = process.env.PORT || 3000;
+const host = "localhost";
 app.listen(port, () => {
     console.log(`App listening at http://%s:%s`, host, port);
 });

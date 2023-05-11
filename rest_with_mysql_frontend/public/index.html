@@ -88,6 +88,8 @@
             wantList = document.getElementById("wantList");
             cardSearch = document.getElementById("cardSearch");
             registerPage = document.getElementById("registerPage");
+            root = document.getElementById("root");
+            root.setAttribute("hidden", true);
         }
 
         function loadHomePage() {
@@ -96,6 +98,7 @@
             wantList.setAttribute("hidden", true);
             cardSearch.setAttribute("hidden", true);
             registerPage.setAttribute("hidden", true);
+            root.setAttribute("hidden", true);
         }
 
         function loadAboutPage() {
@@ -104,6 +107,7 @@
             wantList.setAttribute("hidden", true);
             cardSearch.setAttribute("hidden", true);
             registerPage.setAttribute("hidden", true);
+            root.setAttribute("hidden", true);
             console.log("About Loaded");
         }
 
@@ -113,6 +117,7 @@
             aboutPage.setAttribute("hidden", true);
             cardSearch.setAttribute("hidden", true);
             registerPage.setAttribute("hidden", true);
+            root.setAttribute("hidden", true);
         }
 
         function loadCardSearch() {
@@ -121,6 +126,7 @@
             aboutPage.setAttribute("hidden", true);
             wantList.setAttribute("hidden", true);
             registerPage.setAttribute("hidden", true);
+            root.removeAttribute("hidden");
         }
 
         function loadRegisterPage() {
@@ -129,6 +135,7 @@
             aboutPage.setAttribute("hidden", true);
             wantList.setAttribute("hidden", true);
             cardSearch.setAttribute("hidden", true);
+            root.setAttribute("hidden", true);
         }
 
         function removeHidden() {
@@ -137,6 +144,7 @@
             wantList.removeAttribute("hidden");
             cardSearch.removeAttribute("hidden");
             registerPage.removeAttribute("hidden");
+            root.removeAttribute("hidden");
         }
 
     </script>
@@ -24951,8 +24959,7 @@
       <main class="container">
         <div class="row g-5">
           <div class="col md-8">
-            <noscript>You need to enable JavaScript to run this app.</noscript>
-            <div id="root"></div>
+            <div id="root" hidden></div>
           </div>
         </div>
       </main>
