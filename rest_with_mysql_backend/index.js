@@ -8,7 +8,7 @@ app.use(express.json());
 mongoose.connect("mongodb://127.0.0.1:4000/mtgCards",{
     dbName: "mtgCards",
     useNewURLParser: true,
-    useUnifiiedTopology: true,
+    useUnifiedTopology: true,
 }
 );
 const port = process.env.PORT || 4000;

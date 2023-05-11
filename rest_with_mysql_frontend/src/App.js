@@ -1,5 +1,3 @@
-
-import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from "react";
 
@@ -61,7 +59,7 @@ function getAllCards(){
   fetch("http://127.0.0.1:4000/getAllCards/")
   .then((response) => response.json())
   .then((data) => {
-      console.log("Show all cards:",data);
+      console.log("Show all cards: ",data);
       const dataArr = [];
       dataArr.push(data);
       setCard(data);
@@ -73,7 +71,7 @@ function getCardByName(cardName){
       fetch("http://127.0.0.1:4000/getCardByName/"+cardName)
       .then((response) => response.json())
       .then((data) => {
-          console.log("Show one card:", cardName);
+          console.log("Show one card: ", cardName);
           console.log(data);
           const dataArr = [];
           dataArr.push(data);
@@ -88,7 +86,7 @@ function reduceStock(el){
       fetch("http://127.0.0.1:4000/update/"+el.cid+"/"+el.quantity)
       .then((response) => response.json())
       .then((data) => {
-          console.log("Show one user :", el.cid);
+          console.log("Show one card: ", el.cid);
           console.log(data);
           const dataArr = [];
           dataArr.push(data);
