@@ -7,30 +7,17 @@ function App() {
   const [oneCard, setOneCard] = useState([]);
   const [viewer2, setViewer2] = useState(false);
   const [query, setQuery] = useState('');
-  return (
-    <div>
-      <h1>Cards</h1>
-      <button onClick={() => getAllCards()}>Show All Cards</button>
-      <label for="cardName">Search by Card Name:</label>
-      <input type="text" id="cardName" name="cardName" value={query} onChange={handleChange}/>
-      <hr></hr>  
-      {viewer1 && <div>Cards {showCardResults}</div>}
-      <hr></hr>
-      <h1>Searched Card</h1>
-      {viewer2 && <div>Card: {showCardResult}</div>}
-      <hr></hr>
-    </div>
-  );
-}
-const handleChange = (e) => {
+  
+  const handleChange = (e) => {
   setQuery(e.target.value);
   const results = card.filter(oneCard => {
     if (e.target.value === "") return card;
     return oneCard.name.toLowerCase().includes(e.target.value.toLowerCase())
   });
   setCard(results);
-}
-const showCardResult = oneCard.map((el) => {
+  }
+
+  const showCardResult = oneCard.map((el) => {
   if(el.quantity > 0)
   return (
   <div key={el.cid}>
@@ -44,6 +31,7 @@ const showCardResult = oneCard.map((el) => {
   <button onClick={reduceStock(el)}>Set One Aside for Me?</button>
   </div>
 ); else return;});
+
 const showCardResults = card.map((el) => {
   <div key={el.cid}>
   Name: {el.cardName} <br />
@@ -55,6 +43,7 @@ const showCardResults = card.map((el) => {
   In Stock: {el.quantity} <br />
   </div>
 });
+
 function getAllCards(){
   fetch("http://127.0.0.1:4000/getAllCards/")
   .then((response) => response.json())
@@ -66,6 +55,7 @@ function getAllCards(){
   });
   setViewer1(!viewer1);
 }
+
 function getCardByName(cardName){
   console.log(cardName);
       fetch("http://127.0.0.1:4000/getCardByName/"+cardName)
@@ -79,6 +69,7 @@ function getCardByName(cardName){
       });
       setViewer2(!viewer2);
 }
+
 function reduceStock(el){
   let name = prompt("Please enter your name: ");
   if (name !== ""){
@@ -95,4 +86,28 @@ function reduceStock(el){
       setViewer2(!viewer2);
   }
 }
+
+return (
+    <div>
+      <h1>Cards</h1>
+      <button onClick={() => getAllCards()}>Show All Cards</button>
+      <label for="cardName">Search by Card Name:</label>
+      <input type="text" id="cardName" name="cardName" value={query} onChange={handleChange}/>
+      <hr></hr>  
+      {viewer1 && <div>Cards {showCardResults}</div>}
+      <hr></hr>
+      <h1>Searched Card</h1>
+      {viewer2 && <div>Card: {showCardResult}</div>}
+      <hr></hr>
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
 export default App;
