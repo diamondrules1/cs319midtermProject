@@ -7,7 +7,7 @@ function App() {
   const [oneCard, setOneCard] = useState([]);
   const [viewer2, setViewer2] = useState(false);
   const [query, setQuery] = useState("");
-
+  
   const handleChange = (e) => {
     setQuery(e.target.value);
     const results = card.filter((oneCard) => {
